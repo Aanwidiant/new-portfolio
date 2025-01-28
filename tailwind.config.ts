@@ -20,24 +20,12 @@ export default {
     },
     extend: {
       colors: {
-        light: {
-          bg: "#f4f4f5",
-          'bg-2': "#e2e8f0",
-          fg: "#0f172a",
-          'fg-2': "#334155",
-          primary: "#4CC9FE",
-        },
-
-        dark: {
-          bg: "#0f172a",
-          'bg-2': "#334155",
-          fg: "#f4f4f5",
-          'fg-2': "#e2e8f0",
-          primary: "#024CAA",
-        },
-
+        light: "#E6ECF2",
+        'light-etd': "#F5F7F8",
+        dark: "#0f172a",
+        'dark-etd': "#334155",
+        primary: "#14B8A6",
         gray: "#9ca3af",
-        footer: "#1e293b",
         info: "#0284c7",
         success: "#10b981",
         warning: "#f59e0b",

@@ -10,12 +10,12 @@ interface HeaderProps {
 
 export default function Header({ isSidebarOpen, toggleSidebar }: HeaderProps) {
   return (
-    <header className=" fixed top-0 left-0 z-10 flex items-center w-full shadow-sm bg-light-primary dark:bg-dark-primary dark:shadow-dark-primary/75 shadow-light-primary/75">
+    <header className=" fixed top-0 left-0 z-10 flex items-center w-full shadow-sm bg-primary shadow-primary/75">
       <div className="container">
         <div className="flex items-center justify-between w-full h-24">
           <div className="px-4 flex gap-x-4 items-center">
-            <Link href="/" className="text-2xl lg:text-3xl italic font-semibold text-light-fg dark:text-dark-fg">
-              Aan <span className="text-dark-fg dark:text-light-fg">Widianto</span>
+            <Link href="/" className="text-2xl lg:text-3xl italic font-semibold text-dark">
+              Aan <span className="text-light">Widianto</span>
             </Link>
           </div>
           <div className="items-center p-4 hidden md:flex gap-x-8">

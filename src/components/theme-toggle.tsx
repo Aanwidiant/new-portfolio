@@ -24,21 +24,21 @@ const ThemeToggle = () => {
 
     return (
         <div
-            className="relative flex h-fit w-fit rounded-full p-1 bg-light-bg dark:bg-dark-bg cursor-pointer"
+            className="relative flex h-fit w-fit rounded-full p-1 bg-dark-etd cursor-pointer"
             onClick={toggleTheme}
         >
             <div
                 className={`absolute left-1 h-8 w-8 rounded-full transition-transform duration-300 ${
-                    theme === 'dark' ? 'translate-x-0 bg-dark-primary' : 'translate-x-8 bg-light-primary'
+                    theme === 'dark' ? 'translate-x-0 bg-primary' : 'translate-x-8 bg-light-etd'
                 }`}
             ></div>
 
             <div className="flex w-8 h-8 items-center gap-2 p-1 z-10 justify-center">
-                <Moon className={`w-5 h-5 ${theme === 'dark' ? 'fill-dark-fg' : 'fill-gray'}`} />
+                <Moon className={`w-5 h-5 ${theme === 'dark' ? 'fill-light' : 'fill-gray'}`} />
             </div>
 
             <div className="flex w-8 h-8 items-center gap-2 p-1 z-10 justify-center">
-                <Sun className={`w-5 h-5 ${theme === 'light' ? 'fill-light-fg' : 'fill-gray'}`} />
+                <Sun className={`w-5 h-5 ${theme === 'light' ? 'fill-primary' : 'fill-gray'}`} />
             </div>
         </div>
     );

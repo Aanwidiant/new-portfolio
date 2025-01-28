@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-light-bg dark:bg-dark-bg">
+      <body className="bg-light-etd dark:bg-dark-etd">
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
