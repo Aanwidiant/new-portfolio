@@ -10,7 +10,7 @@ export default function Sidebar({ isOpen, toggleSidebar }: SidebarProps) {
   return (
     <div>
       <div
-        className={`fixed top-24 right-0 z-40 h-full w-5/12 md:hidden bg-primary transform transition-transform duration-500 ease-in-out ${
+        className={`fixed top-20 right-0 z-40 h-full w-1/2 lg:hidden bg-primary transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } lg:static lg:transform-none lg:opacity-100 lg:w-full lg:h-auto`}
       >

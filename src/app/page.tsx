@@ -1,3 +1,7 @@
+import Button from "@/components/button";
+import Mail from "@/components/icons/mail";
+import Download from "@/components/icons/download";
+
 export default function Home() {
     return (
         <main className="flex pt-32 pb-16 min-h-screen ">
@@ -13,9 +17,13 @@ export default function Home() {
                             Developer</h2>
                         <p className="font-light leading-relaxed text-dark dark:text-light lg:text-lg">
                             Saya adalah mahasiswa teknik informatika yang tertarik dan mendalami pengembangan website.
-                            Tertarik dibuatkan website, <span
-                            className="font-bold text-primary">klik dibawah ini!</span>
+                            Ingin tahu lebih banyak tentang saya? Anda bisa mengunduh CV saya atau langsung menghubungi saya melalui 
+                            <span className="font-semibold text-primary"> tombol dibawah ini!</span>
                         </p>
+                        <div className="flex gap-x-4">
+                            <Button href="/contact"><Mail className="fill-dark dark:fill-light w-6 h-6"/>Hubungi Saya</Button>
+                            <Button href="/doc/cv-aanwidiant.pdf" download={true}><Download className="fill-dark dark:fill-light w-6 h-6"/>Unduh CV</Button>
+                        </div>
                     </div>
                     <div className="self-center w-full px-4 lg:w-1/2">
                         <div className="mx-auto mt-10">

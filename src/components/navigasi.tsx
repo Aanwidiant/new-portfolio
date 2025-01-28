@@ -11,7 +11,7 @@ interface NavigasiProps {
 export default function Navigasi({ layout, toggleSidebar }: NavigasiProps) {
   const pathName = usePathname();
 
-  const layoutClass = layout === "header" ? "flex flex-row text-xl gap-5" : layout === "sidebar" ? "flex flex-col gap-4 text-lg py-2" : "flex flex-col gap-2 text-base";
+  const layoutClass = layout === "header" ? "flex flex-row text-xl gap-x-10" : layout === "sidebar" ? "flex flex-col gap-y-10 text-lg py-2" : "flex flex-col gap-2 text-base";
 
   const handleLinkClick = () => {
     if (layout === "sidebar" && toggleSidebar) {
