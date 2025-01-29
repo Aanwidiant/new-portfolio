@@ -35,7 +35,7 @@ export default function Button({ children, type = "button", onClick, href, downl
         <button
             type={type}
             onClick={handleClick}
-            className="px-4 py-2.5 text-base font-semibold transition duration-300 ease-in-out text-dark dark:text-light bg-primary rounded-md hover:shadow-md hover:shadow-primary w-fit inline-flex items-center gap-x-3"
+            className="group px-4 py-2.5 text-base font-semibold transition duration-300 ease-in-out text-dark dark:text-light bg-primary rounded-md hover:shadow-md hover:shadow-primary hover:text-light dark:hover:text-dark w-fit inline-flex items-center gap-x-3"
         >
             {children}
         </button>

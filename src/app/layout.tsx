@@ -1,27 +1,7 @@
-// import type { Metadata } from "next";
 import "./globals.css";
 import ClientLayout from "@/components/layouts/client-layout";
 import React from "react";
-
-// export const metadata: Metadata = {
-//   metadataBase: new URL("https://sukses-mandiri.my.id/"),
-//   title: "Sukses Mandiri Alka",
-//   description: "Website UMKM Sukses Mandiri Aluminium dan Kaca",
-//   keywords: ["aluminium", "kaca", "umkm"],
-//   openGraph: {
-//     title: "Sukses Mandiri Alka",
-//     description: "Website UMKM Sukses Mandiri Aluminium dan Kaca",
-//     url: "https://sukses-mandiri.my.id/",
-//     siteName: "Sukses Mandiri Alka",
-//     images: ["/image/logo/logo.svg"],
-//   },
-//   icons: {
-//     icon: [
-//       { url: "/image/logo/logo.svg", type: "image/svg+xml" },
-//       { url: "/image/logo/logo.png", type: "image/png" },
-//     ],
-//   },
-// };
+import { ThemeProvider } from "@/contexts/theme-context";
 
 export default function RootLayout({
   children,
@@ -29,9 +9,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth transition duration-300 ease-in-out">
       <body className="bg-light-etd dark:bg-dark-etd">
-        <ClientLayout>{children}</ClientLayout>
+        <ThemeProvider>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        </ThemeProvider>
       </body>
     </html>
   );

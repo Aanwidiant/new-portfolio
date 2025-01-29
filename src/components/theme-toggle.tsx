@@ -1,26 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import Moon from '@/components/icons/moon';
 import Sun from '@/components/icons/sun';
-
-type Theme = 'light' | 'dark';
+import { useTheme } from '@/contexts/theme-context'
 
 const ThemeToggle = () => {
-    const [theme, setTheme] = useState<Theme>('light');
-
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') as Theme;
-        if (savedTheme) {
-            setTheme(savedTheme);
-            document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-        }
-    }, []);
-
-    const toggleTheme = () => {
-        const newTheme: Theme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        document.documentElement.classList.toggle('dark', newTheme === 'dark');
-        localStorage.setItem('theme', newTheme);
-    };
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <div
@@ -28,7 +11,7 @@ const ThemeToggle = () => {
             onClick={toggleTheme}
         >
             <div
-                className={`absolute left-1 h-8 w-8 rounded-full transition-transform duration-300 ${
+                className={`absolute left-1 h-8 w-8 rounded-full transition-transform duration-300 ease-in-out ${
                     theme === 'dark' ? 'translate-x-0 bg-primary' : 'translate-x-8 bg-light-etd'
                 }`}
             ></div>
@@ -43,6 +26,5 @@ const ThemeToggle = () => {
         </div>
     );
 };
-
 
 export default ThemeToggle;

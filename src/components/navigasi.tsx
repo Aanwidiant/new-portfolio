@@ -29,12 +29,25 @@ export default function Navigasi({ layout, toggleSidebar }: NavigasiProps) {
           { href: "/blog", label: "Blog" },
           { href: "/contact", label: "Contact" },
         ].map((item) => (
-          <li key={item.href} className={`${layout === "header" || "sidebar" ? "group relative w-fit" : ""}`}>
-            <Link href={item.href} className={`${layout === "footer" ? "hover:text-primary" : "text-dark dark:text-light"}  ${(layout === "header" || layout === "sidebar") && pathName === item.href ? "font-semibold" : ""}`} onClick={handleLinkClick}>
+          <li 
+          key={item.href} 
+          className="font-medium"
+          >
+            <Link 
+            href={item.href} 
+            className={`
+              transition duration-300 ease-in-out
+              ${layout === "footer" ? 
+                "text-dark dark:text-light hover:text-primary dark:hover:text-primary" :
+                (layout === "header" || layout === "sidebar") ? 
+                  "text-dark dark:text-light hover:text-light dark:hover:text-dark" :
+                  ""
+              }
+              ${pathName === item.href && layout !== "footer" ? "font-bold text-xl text-light-etd dark:text-dark-etd" : ""}
+            `}
+            onClick={handleLinkClick}
+            >
               {item.label}
-              {(layout === "header" || layout === "sidebar") && (
-                <span className={`absolute left-0 right-0 -bottom-1 h-0.5 bg-dark dark:bg-light transform transition-transform duration-300 ease-in-out origin-left ${pathName === item.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"}`} />
-              )}
             </Link>
           </li>
         ))}
