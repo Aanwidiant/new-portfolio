@@ -11,7 +11,7 @@ interface NavigasiProps {
 export default function Navigasi({ layout, toggleSidebar }: NavigasiProps) {
   const pathName = usePathname();
 
-  const layoutClass = layout === "header" ? "flex flex-row text-xl gap-x-10" : layout === "sidebar" ? "flex flex-col gap-y-10 text-lg py-2" : "flex flex-col gap-2 text-base";
+  const layoutClass = layout === "header" ? "flex flex-row text-xl gap-x-10" : layout === "sidebar" ? "flex flex-col gap-y-10 text-lg py-2 ml-8" : "flex flex-col gap-2 text-base";
 
   const handleLinkClick = () => {
     if (layout === "sidebar" && toggleSidebar) {
@@ -43,7 +43,7 @@ export default function Navigasi({ layout, toggleSidebar }: NavigasiProps) {
                   "text-dark dark:text-light hover:text-light dark:hover:text-dark" :
                   ""
               }
-              ${pathName === item.href && layout !== "footer" ? "font-bold text-xl text-light-etd dark:text-dark-etd" : ""}
+              ${pathName === item.href && layout !== "footer" ? "font-bold text-xl text-light dark:text-dark" : ""}
             `}
             onClick={handleLinkClick}
             >
