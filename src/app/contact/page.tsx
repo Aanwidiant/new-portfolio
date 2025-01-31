@@ -54,7 +54,7 @@ export default function ContactPage() {
     };
 
     return (
-        <main className="pt-28 pb-16 container lg:min-h-screen space-y-4">
+        <main className="pt-28 pb-16 container lg:min-h-screen space-y-6">
             <h2 className="w-full text-3xl font-bold text-center text-dark dark:text-light lg:text-4xl tracking-wider">My <span
                 className="text-primary">Contact</span>
             </h2>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                             type="text"
                             id="name"
                             name="name"
-                            className="w-full p-3 rounded-md text-dark dark:text-light focus:outline-none focus:ring-primary focus:ring-2 border border-dark-etd dark:border-light-etd bg-light-etd dark:bg-dark-etd"
+                            className="w-full p-3 rounded-md text-dark dark:text-light focus:outline-none focus:ring-primary focus:ring-2 border border-dark-etd dark:border-light-etd bg-light-etd dark:bg-dark-etd focus:border-none"
                             required
                             placeholder="Masukkan nama anda"
                         />
@@ -87,7 +87,7 @@ export default function ContactPage() {
                             type="email"
                             id="email"
                             name="email"
-                            className="w-full p-3 rounded-md text-dark dark:text-light focus:outline-none focus:ring-primary focus:ring-2 border border-dark-etd dark:border-light-etd bg-light-etd dark:bg-dark-etd"
+                            className="w-full p-3 rounded-md text-dark dark:text-light focus:outline-none focus:ring-primary focus:ring-2 border border-dark-etd dark:border-light-etd bg-light-etd dark:bg-dark-etd focus:border-none"
                             required
                             placeholder="Masukkan alamat email anda"
                         />
@@ -99,7 +99,7 @@ export default function ContactPage() {
                             onChange={(e) => setMessage(e.target.value)}
                             id="message"
                             name="message"
-                            className="w-full p-3 rounded-md text-dark dark:text-light focus:outline-none focus:ring-primary focus:ring-2 border border-dark-etd dark:border-light-etd bg-light-etd dark:bg-dark-etd"
+                            className="w-full p-3 rounded-md text-dark dark:text-light focus:outline-none focus:ring-primary focus:ring-2 border border-dark-etd dark:border-light-etd bg-light-etd dark:bg-dark-etd focus:border-none"
                             rows={3}
                             required
                             placeholder="Tulis pesan anda disini"
@@ -107,7 +107,7 @@ export default function ContactPage() {
                         <div className="w-full flex justify-end">
                             <button
                                 type="submit"
-                                disabled={isLoading} // Disable button when loading
+                                disabled={isLoading}
                                 className="px-8 py-2 mt-2 text-base font-semibold transition duration-300 ease-in-out text-white bg-primary rounded-md hover:shadow-md hover:shadow-primary w-fit"
                             >
                                 {isLoading ? 'Mengirim...' : 'Kirim'}

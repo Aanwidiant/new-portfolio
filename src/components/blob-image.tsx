@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlobImage = () => {
     return (
-        <div className="mx-auto mt-10 flex justify-center items-center">
+        <div className="mx-auto flex justify-center items-center">
             <svg
                 className="mx-auto scale-90 md:scale-125 fill-primary"
                 width="400"
