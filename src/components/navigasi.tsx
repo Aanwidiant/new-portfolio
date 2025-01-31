@@ -43,7 +43,7 @@ export default function Navigasi({ layout, toggleSidebar }: NavigasiProps) {
                   "text-dark dark:text-light hover:text-light dark:hover:text-dark" :
                   ""
               }
-              ${pathName === item.href && layout !== "footer" ? "font-bold text-xl text-light dark:text-dark" : ""}
+              ${pathName === item.href && layout !== "footer" ? "font-bold text-xl text-light-etd dark:text-dark-etd" : ""}
             `}
             onClick={handleLinkClick}
             >

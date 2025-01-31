@@ -4,30 +4,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@keyframes logoSequence {
-    0% {
-        transform: translateX(0) translateY(0); /* Posisi awal */
-        opacity: 1;
-    }
-    25% {
-        transform: translateX(-100px) translateY(0); /* Gerak ke kiri */
-        opacity: 1;
-    }
-    50% {
-        transform: translateX(100px) translateY(100px); /* Gerak ke kanan dan turun */
-        opacity: 1;
-    }
-    75% {
-        transform: translateX(0) translateY(200px); /* Kembali ke kiri dan turun lebih jauh */
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(0) translateY(200px); /* Posisi akhir */
-        opacity: 0; /* Menghilang */
-    }
-}
-
-.animate-logoSequence {
-    animation: logoSequence 10s ease-in-out infinite;
-}
