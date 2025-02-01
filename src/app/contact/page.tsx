@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Mail from '@/components/icons/mail';
 import Location from '@/components/icons/location';
 import SocialMedia from '@/components/social-media';
+import Notification from '@/components/notification';
 
 export default function ContactPage() {
     const [name, setName] = useState('');
@@ -11,8 +12,6 @@ export default function ContactPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-
-    const closeModal = () => setIsModalOpen(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -54,7 +53,7 @@ export default function ContactPage() {
     };
 
     return (
-        <main className="pt-28 pb-16 container lg:min-h-screen space-y-6">
+        <main className="pt-28 pb-16 container lg:min-h-screen space-y-6 w-full">
             <h2 className="w-full text-3xl font-bold text-center text-dark dark:text-light lg:text-4xl tracking-wider">My <span
                 className="text-primary">Contact</span>
             </h2>
@@ -141,28 +140,14 @@ export default function ContactPage() {
                 </div>
             </div>
             {isModalOpen && (
-                <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
-                    <div className="bg-light dark:bg-dark p-6 rounded-md space-y-4 max-w-sm w-full">
-                        {isSuccess ? (
-                            <div>
-                                <h3 className="text-xl font-semibold text-success">Pesan berhasil dikirim!</h3>
-                                <p className='text-dark dark:text-light'>Terima kasih telah menghubungi saya.</p>
-                            </div>
-                        ) : (
-                            <div>
-                                <h3 className="text-xl font-semibold text-error">Gagal mengirim pesan</h3>
-                                <p className='text-dark dark:text-light'>Terjadi kesalahan, silakan coba lagi nanti.</p>
-                            </div>
-                        )}
-                        <button
-                            onClick={closeModal}
-                            className="w-full px-4 py-2 bg-primary text-dark dark:text-light hover:text-light dark:hover:text-dark rounded-md mt-4 hover:shadow-md hover:shadow-primary"
-                        >
-                            Tutup
-                        </button>
-                    </div>
-                </div>
+                <Notification
+                    type={isSuccess ? "success" : "error"}
+                    message={isSuccess ? "Pesan berhasil dikirim!" : "Gagal mengirim pesan!"}
+                    description={isSuccess ? "Terima kasih telah menghubungi saya." : "Terjadi kesalahan, silakan coba lagi nanti."}
+                    duration={4000}
+                    onClose={() => setIsModalOpen(false)}
+                />
             )}
-        </main>
+        </main >
     );
 }

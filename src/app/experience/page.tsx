@@ -50,7 +50,7 @@ export default function ExperiencePage() {
                 <div className="mx-auto text-center space-y-6">
                     <h2 className="w-full text-3xl font-bold text-center text-dark dark:text-light lg:text-4xl tracking-wider">My <span
                         className="text-primary">Skill</span></h2>
-                    <p className="font-medium text-md text-dark dark:text-light md:text-lg">Berikut ini adalah teknologi yang saya saya pelajari dan gunakan.</p>
+                    <p className="font-medium text-md text-dark dark:text-light md:text-lg">Berikut ini adalah teknologi yang telah saya pelajari dan gunakan.</p>
                 </div>
                 <div className="w-full flex justify-center items-center">
                     <LogoCarousel />
