@@ -30,9 +30,9 @@ export default function ExperiencePage() {
         <main className="pt-28 pb-16 min-h-screen container space-y-16">
             <section className="w-full px-4 space-y-6">
                 <div className="mx-auto text-center space-y-6">
-                    <h2 className="w-full text-3xl font-bold text-center text-dark dark:text-light lg:text-4xl tracking-wider">My <span
+                    <h2 className="w-full text-3xl font-bold text-center lg:text-4xl tracking-wider">My <span
                         className="text-primary">Services</span></h2>
-                    <p className="font-medium text-md text-dark dark:text-light md:text-lg">Berikut ini adalah layanan yang saya tawarkan untuk membantu anda.</p>
+                    <p className="font-medium text-md md:text-lg">Berikut ini adalah layanan yang saya tawarkan untuk membantu anda.</p>
                 </div>
                 <div className="w-full flex flex-wrap gap-y-6 justify-center">
                     {services.map((service) => (
@@ -48,9 +48,9 @@ export default function ExperiencePage() {
             </section>
             <section className="w-full px-4 space-y-6">
                 <div className="mx-auto text-center space-y-6">
-                    <h2 className="w-full text-3xl font-bold text-center text-dark dark:text-light lg:text-4xl tracking-wider">My <span
+                    <h2 className="w-full text-3xl font-bold text-center lg:text-4xl tracking-wider">My <span
                         className="text-primary">Skill</span></h2>
-                    <p className="font-medium text-md text-dark dark:text-light md:text-lg">Berikut ini adalah teknologi yang telah saya pelajari dan gunakan.</p>
+                    <p className="font-medium text-md md:text-lg">Berikut ini adalah teknologi yang telah saya pelajari dan gunakan.</p>
                 </div>
                 <div className="w-full flex justify-center items-center">
                     <LogoCarousel />
@@ -58,9 +58,9 @@ export default function ExperiencePage() {
             </section>
             <section className="w-full px-4 space-y-6">
                 <div className="mx-auto text-center space-y-6">
-                    <h2 className="w-full text-3xl font-bold text-center text-dark dark:text-light lg:text-4xl tracking-wider">My <span
+                    <h2 className="w-full text-3xl font-bold text-center lg:text-4xl tracking-wider">My <span
                         className="text-primary">Portfolio</span></h2>
-                    <p className="font-medium text-md text-dark dark:text-light md:text-lg">Berikut ini adalah beberapa project yang telah saya kerjakan.</p>
+                    <p className="font-medium text-md md:text-lg">Berikut ini adalah beberapa project yang telah saya kerjakan.</p>
                 </div>
                 <div className="w-full flex justify-center items-center">
                 </div>

@@ -9,14 +9,14 @@ export default function Home() {
             <div className="container">
                 <div className="flex flex-wrap gap-y-12 md:gap-y-36 md:mb-12 lg:mb-0">
                     <div className="self-center flex flex-col gap-y-4 w-full px-4 lg:w-1/2">
-                        <p className="text-base font-semibold text-dark dark:text-light md:text-2xl">Halo semua,
+                        <p className="font-semibold md:text-2xl">Halo semua,
                             saya</p>
                         <h1 className="block text-4xl font-bold text-primary lg:text-5xl">
-                            Aan <span className="text-dark dark:text-light">Widianto</span>
+                            Aan <span className='text-dark dark:text-light'>Widianto</span>
                         </h1>
-                        <h2 className="text-lg font-medium text-dark dark:text-light lg:text-2xl">Mahasiswa & Junior
+                        <h2 className="text-lg font-medium lg:text-2xl">Mahasiswa & Junior
                             Developer</h2>
-                        <p className="font-light leading-relaxed text-dark dark:text-light lg:text-lg">
+                        <p className="font-light leading-relaxed lg:text-lg">
                             Saya adalah mahasiswa teknik informatika yang tertarik dan mendalami pengembangan website.
                             Ingin tahu lebih banyak tentang saya? Anda bisa mengunduh CV saya atau langsung menghubungi
                             saya melalui
@@ -24,10 +24,10 @@ export default function Home() {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Button href="/contact"><Mail
-                                className="fill-dark dark:fill-light group-hover:fill-light dark:group-hover:fill-dark transition duration-300 ease-in-out w-6 h-6" />Hubungi
+                                className="icon-fill w-6 h-6" />Hubungi
                                 Saya</Button>
                             <Button href="/doc/cv-aanwidiant.pdf" download={true}><Download
-                                className="fill-dark dark:fill-light group-hover:fill-light dark:group-hover:fill-dark transition duration-300 ease-in-out w-6 h-6" />Unduh
+                                className="icon-fill w-6 h-6" />Unduh
                                 CV</Button>
                         </div>
                     </div>

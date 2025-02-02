@@ -1,6 +1,173 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Tailwind Directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Autofill Styling */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #f5f7f8 inset !important;
+    -webkit-text-fill-color: #0f172a !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.dark input:-webkit-autofill,
+.dark textarea:-webkit-autofill,
+.dark select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #334155 inset !important;
+    -webkit-text-fill-color: #e6ecf2 !important;
+}
+
+/* Utility Classes */
+@layer utilities {
+    .icon-fill {
+        @apply fill-dark transition duration-300 ease-in-out group-hover:fill-light dark:fill-light dark:group-hover:fill-dark;
+    }
+}
+
+/* Preformatted Code Block Styling */
+pre {
+    @apply overflow-x-auto whitespace-pre-wrap rounded-lg border border-dark/20 bg-light/25 p-4 text-sm dark:border-light/20 dark:bg-dark/25 md:text-base;
+    font-family: 'Fira Code', monospace;
+}
+
+/* Token Styling for Syntax Highlighting */
+
+/* Light Mode */
+:not(.dark) .token.comment,
+:not(.dark) .token.prolog,
+:not(.dark) .token.doctype,
+:not(.dark) .token.cdata {
+    @apply text-gray-500; /* Medium gray for comments */
+}
+
+:not(.dark) .token.punctuation {
+    @apply opacity-70;
+}
+
+:not(.dark) .token.namespace {
+    @apply opacity-70;
+}
+
+:not(.dark) .token.property,
+:not(.dark) .token.tag,
+:not(.dark) .token.boolean,
+:not(.dark) .token.number,
+:not(.dark) .token.constant,
+:not(.dark) .token.symbol {
+    @apply text-pink-500; /* Pink for properties/tags */
+}
+
+:not(.dark) .token.selector,
+:not(.dark) .token.attr-name,
+:not(.dark) .token.string,
+:not(.dark) .token.char,
+:not(.dark) .token.builtin,
+:not(.dark) .token.inserted {
+    @apply text-teal-500; /* Teal for strings/attributes */
+}
+
+:not(.dark) .token.operator,
+:not(.dark) .token.entity,
+:not(.dark) .token.url,
+:not(.dark) .language-css .token.string,
+:not(.dark) .style .token.string,
+:not(.dark) .token.variable {
+    @apply text-yellow-600; /* Yellow for operators/variables */
+}
+
+:not(.dark) .token.atrule,
+:not(.dark) .token.attr-value,
+:not(.dark) .token.keyword {
+    @apply text-blue-500; /* Blue for atrules/keywords */
+}
+
+:not(.dark) .token.regex,
+:not(.dark) .token.important {
+    @apply text-orange-500; /* Orange for regex/important */
+}
+
+:not(.dark) .token.deleted {
+    @apply text-red-500;
+}
+
+:not(.dark) .token.important,
+:not(.dark) .token.bold {
+    @apply font-bold;
+}
+
+:not(.dark) .token.italic {
+    font-style: italic;
+}
+
+/* Dark Mode */
+.dark .token.comment,
+.dark .token.prolog,
+.dark .token.doctype,
+.dark .token.cdata {
+    @apply text-gray-400; /* Lighter gray for comments in dark mode */
+}
+
+.dark .token.punctuation {
+    @apply opacity-70;
+}
+
+.dark .token.namespace {
+    @apply opacity-70;
+}
+
+.dark .token.property,
+.dark .token.tag,
+.dark .token.boolean,
+.dark .token.number,
+.dark .token.constant,
+.dark .token.symbol {
+    @apply text-pink-400; /* Soft pink for properties/tags in dark mode */
+}
+
+.dark .token.selector,
+.dark .token.attr-name,
+.dark .token.string,
+.dark .token.char,
+.dark .token.builtin,
+.dark .token.inserted {
+    @apply text-teal-400; /* Softer teal for strings/attributes in dark mode */
+}
+
+.dark .token.operator,
+.dark .token.entity,
+.dark .token.url,
+.dark .language-css .token.string,
+.dark .style .token.string,
+.dark .token.variable {
+    @apply text-yellow-400; /* Softer yellow for operators/variables in dark mode */
+}
+
+.dark .token.atrule,
+.dark .token.attr-value,
+.dark .token.keyword {
+    @apply text-blue-400; /* Softer blue for atrules/keywords in dark mode */
+}
+
+.dark .token.regex,
+.dark .token.important {
+    @apply text-orange-400; /* Softer orange for regex/important in dark mode */
+}
+
+.dark .token.deleted {
+    @apply text-red-400;
+}
+
+.dark .token.important,
+.dark .token.bold {
+    @apply font-bold;
+}
+
+.dark .token.italic {
+    font-style: italic;
+}

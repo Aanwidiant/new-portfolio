@@ -25,7 +25,7 @@ export default {
                 dark: '#0f172a',
                 'dark-etd': '#334155',
                 primary: '#14B8A6',
-                gray: '#9ca3af',
+                muted: '#9ca3af',
                 info: '#0284c7',
                 success: '#10b981',
                 warning: '#f59e0b',

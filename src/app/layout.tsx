@@ -10,7 +10,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth transition duration-300 ease-in-out">
-      <body className="bg-light-etd dark:bg-dark-etd">
+      <body className="bg-light-etd dark:bg-dark-etd text-dark dark:text-light">
         <ThemeProvider>
           <ClientLayout>
             {children}

@@ -9,15 +9,18 @@ interface ButtonProps {
     onClick?: MouseEventHandler<HTMLButtonElement>;
     href?: string;
     download?: boolean;
+    disabled?: boolean;
 }
 
-export default function Button({ children, type = "button", onClick, href, download }: ButtonProps) {
+export default function Button({ children, type = "button", onClick, href, download, disabled }: ButtonProps) {
     const router = useRouter();
 
     const handleClick: MouseEventHandler<HTMLButtonElement> = (e) => {
         if (onClick) {
             onClick(e);
         }
+
+        if (disabled) return;
 
         if (href) {
             if (download) {
@@ -35,7 +38,8 @@ export default function Button({ children, type = "button", onClick, href, downl
         <button
             type={type}
             onClick={handleClick}
-            className="group px-4 py-2.5 text-base font-semibold transition duration-300 ease-in-out text-dark dark:text-light bg-primary rounded-md hover:shadow-md hover:shadow-primary hover:text-light dark:hover:text-dark w-fit inline-flex items-center gap-x-3"
+            disabled={disabled}
+            className="group px-4 py-2.5 font-semibold transition duration-300 ease-in-out bg-primary rounded-md hover:shadow-md hover:shadow-primary hover:text-light dark:hover:text-dark w-fit inline-flex items-center gap-x-3 disabled:cursor-none disabled:hover:shadow-none disabled:hover:text-dark disabled:hover:dark:text-light"
         >
             {children}
         </button>

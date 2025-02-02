@@ -63,7 +63,7 @@ export default function LogoCarousel() {
               height={80}
               className="hidden dark:block"
             />
-            <p className="font-medium text-dark dark:text-light">
+            <p className="font-medium">
               {logo.name}
             </p>
           </div>

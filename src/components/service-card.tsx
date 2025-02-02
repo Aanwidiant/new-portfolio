@@ -28,11 +28,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description }) 
         />
       </div>
       <div className="flex justify-between items-center">
-        <h3 className="text-xl font-semibold text-dark dark:text-light">{title}</h3>
+        <h3 className="text-xl font-semibold">{title}</h3>
         <Chevron className={`w-8 h-8 hover:scale-125 fill-dark dark:fill-light transform ${isOpen ? "rotate-90" : ""}`} />
       </div>
       {isOpen && (
-        <p className="text-dark dark:text-light text-justify">{description}</p>
+        <p className="text-justify">{description}</p>
       )}
     </div>
   );

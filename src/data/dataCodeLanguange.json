@@ -1,0 +1,11 @@
+{
+    "codeLanguange": [
+        { "id": 1, "type": "javascript" },
+        { "id": 2, "type": "typescript" },
+        { "id": 3, "type": "json" },
+        { "id": 4, "type": "markup" },
+        { "id": 5, "type": "css" },
+        { "id": 6, "type": "sql" },
+        { "id": 7, "type": "bash" }
+    ]
+}

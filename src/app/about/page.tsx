@@ -38,14 +38,14 @@ export default function AboutPage() {
     ];
 
     return (
-        <main className="pt-32 pb-16 min-h-screen flex flex-col gap-y-12">
+        <main className="pt-28 pb-16 min-h-screen flex flex-col gap-y-12">
             <section>
-                <div className="container text-justify space-y-4">
-                    <div className="flex flex-wrap space-y-4">
-                        <h2 className="w-full text-3xl font-bold tracking-wider text-center text-dark dark:text-light lg:text-4xl">About <span
+                <div className="container text-justify space-y-6">
+                    <div className="flex flex-wrap space-y-6">
+                        <h2 className="w-full text-3xl font-bold tracking-wider text-center lg:text-4xl">About <span
                             className="text-primary">Me</span></h2>
                         <div className="w-full px-4 lg:w-1/2 space-y-4">
-                            <h4 className="text-lg font-medium text-dark dark:text-light lg:text-xl">Selamat
+                            <h4 className="text-lg font-medium lg:text-xl">Selamat
                                 datang, perkenalkan saya Aan Widianto.</h4>
                             <p className="text-dark-etd dark:text-light-etd lg:text-lg">
                                 Saat ini, saya bekerja sebagai junior developer di PT Belanja Pasti Indonesia, di mana
@@ -59,20 +59,20 @@ export default function AboutPage() {
                             </p>
                         </div>
                         <div className="w-full px-4 lg:w-1/2 space-y-4">
-                            <h4 className="text-lg font-medium text-dark dark:text-light lg:text-xl">Visi</h4>
+                            <h4 className="text-lg font-medium lg:text-xl">Visi</h4>
                             <p className="text-dark-etd dark:text-light-etd lg:text-lg">Menjadi seorang web
                                 developer yang
                                 handal dan berpengalaman, mampu menciptakan solusi web inovatif yang memberikan dampak
                                 positif bagi
                                 pengguna dan industri.</p>
-                            <h4 className="text-lg font-medium text-dark dark:text-light lg:text-xl">Misi</h4>
+                            <h4 className="text-lg font-medium lg:text-xl">Misi</h4>
                             <p className="text-dark-etd dark:text-light-etd lg:text-lg">Terus belajar dan
                                 berkembang di dunia teknologi, serta berkontribusi pada pengembangan solusi web yang
                                 efektif dan efisien yang dapat mendukung kebutuhan pengguna dan bisnis.</p>
                         </div>
                     </div>
                     <div className="px-4 space-y-4">
-                        <h4 className="text-center text-lg font-medium text-dark dark:text-light lg:text-xl">Motivasi</h4>
+                        <h4 className="text-center text-lg font-medium lg:text-xl">Motivasi</h4>
                         <p className="text-dark-etd dark:text-light-etd lg:text-lg">Saya termotivasi oleh tantangan
                             untuk mengatasi masalah melalui pengembangan web dan percaya bahwa teknologi memiliki
                             potensi besar untuk membawa perubahan positif dalam kehidupan banyak orang. Saya berusaha
@@ -84,14 +84,14 @@ export default function AboutPage() {
             <section>
                 <div className="container text-justify">
                     <div className="flex flex-wrap gap-y-3">
-                        <h2 className="w-full mb-6 text-3xl font-bold tracking-wider text-center text-dark dark:text-light lg:text-4xl">My <span
+                        <h2 className="w-full mb-6 text-3xl font-bold tracking-wider text-center lg:text-4xl">My <span
                             className="text-primary">Journey</span></h2>
                         <div className="w-full px-4 lg:w-1/2 flex flex-col items-center">
-                            <p className="text-lg font-medium py-3 text-dark dark:text-light">Riwayat Pendidikan</p>
+                            <p className="text-lg font-medium py-3">Riwayat Pendidikan</p>
                             <Timeline items={eduBackground} />
                         </div>
                         <div className="w-full px-4 lg:w-1/2 flex flex-col items-center">
-                            <p className="text-lg font-medium py-3 text-dark dark:text-light">Riwayat Pekerjaan</p>
+                            <p className="text-lg font-medium py-3">Riwayat Pekerjaan</p>
                             <Timeline items={employHistory} />
                         </div>
                     </div>

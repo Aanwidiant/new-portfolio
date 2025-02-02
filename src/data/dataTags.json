@@ -1,0 +1,9 @@
+{
+    "tags": [
+        { "id": 1, "tag": "React" },
+        { "id": 2, "tag": "JavaScript" },
+        { "id": 3, "tag": "Frontend" },
+        { "id": 4, "tag": "Next.js" },
+        { "id": 5, "tag": "CSS" }
+    ]
+}

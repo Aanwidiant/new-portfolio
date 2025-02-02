@@ -28,10 +28,10 @@ const Timeline = ({ items }: TimelineProps) => {
                         </div>
                     )}
                     <div>
-                        <h3 className="text-lg font-semibold text-dark dark:text-light">
+                        <h3 className="text-lg font-semibold">
                             {item.title}
                         </h3>
-                        <time className="text-sm font-normal text-dark dark:text-light">
+                        <time className="text-sm">
                             {item.date}
                         </time>
                         <p className="text-dark-etd dark:text-light">

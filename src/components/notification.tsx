@@ -107,7 +107,7 @@ export default function Notification({
       <div className="flex items-start gap-4 w-full">
         {iconMap[type]}
         <div className="flex-1">
-          <h3 className="font-semibold text-dark dark:text-light">{message}</h3>
+          <h3 className="font-semibold">{message}</h3>
           {description && (
             <p className="text-sm text-dark-etd dark:text-light-etd">
               {description}
