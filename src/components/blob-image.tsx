@@ -1,6 +1,10 @@
 import React from 'react';
 
-const BlobImage = () => {
+interface BlobImageProps {
+    heroImage: string;
+}
+
+const BlobImage: React.FC<BlobImageProps> = ({ heroImage }) => {
     return (
         <div className="mx-auto flex justify-center items-center">
             <svg
@@ -23,7 +27,7 @@ const BlobImage = () => {
                 <image
                     className="h-full"
                     id="imageBlob"
-                    href="img/profile.png"
+                    href={heroImage}
                     clipPath="url(#heroClip)"
                 ></image>
             </svg>

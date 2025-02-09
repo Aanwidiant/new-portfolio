@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongodb": "^6.13.0",
     "next": "15.1.6",
     "nodemailer": "^6.10.0",
     "prismjs": "^1.29.0",

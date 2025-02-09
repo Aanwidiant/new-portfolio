@@ -1,11 +1,27 @@
-'use client';
-import React, { useState } from 'react';
+'use client'
+import { useEffect, useState } from 'react';
 import Mail from '@/components/icons/mail';
 import Location from '@/components/icons/location';
 import SocialMedia from '@/components/social-media';
 import Notification from '@/components/notification';
 import Button from '@/components/button'
 import Spinner from '@/components/icons/spinner';
+
+interface Profile {
+    name: string;
+    address: string;
+    email: string;
+    social_links: SocialLink;
+}
+
+interface SocialLink {
+    github: string;
+    linkedin: string;
+    instagram: string;
+    facebook: string;
+    twitter: string;
+}
+
 
 export default function ContactPage() {
     const [name, setName] = useState('');
@@ -53,6 +69,30 @@ export default function ContactPage() {
             setIsModalOpen(true);
         }
     };
+
+    const [profileData, setProfileData] = useState<Profile | null>(null);
+
+    useEffect(() => {
+        const fetchProfileData = async () => {
+            try {
+                const response = await fetch('/api/user');
+                if (response.ok) {
+                    const data = await response.json();
+                    setProfileData(data);
+                } else {
+                    console.error('Profile data not found');
+                }
+            } catch (error) {
+                console.error('Error fetching hero content:', error);
+            }
+        };
+
+        fetchProfileData();
+    }, []);
+
+    if (!profileData) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <main className="pt-28 pb-16 container lg:min-h-screen space-y-6 w-full">
@@ -123,19 +163,18 @@ export default function ContactPage() {
                                 melalui:</h3>
                             <div className="flex gap-x-3 items-center">
                                 <Mail className="fill-dark dark:fill-light w-8 h-8" />
-                                <p className="">aanwidianto01@gmail.com</p>
+                                <p className="">{profileData.email}</p>
                             </div>
                             <div className="flex gap-x-3 items-center">
                                 <Location className="fill-dark dark:fill-light w-8 h-8 flex-shrink-0" />
-                                <p className="flex flex-wrap ">Talunombo RT 36/ RW 17,
-                                    Sidomulyo, Pengasih, Kulon Progo, Yogyakarta</p>
+                                <p className="flex flex-wrap ">{profileData.address}</p>
                             </div>
                         </div>
                         <div className="bg-light dark:bg-dark p-4 rounded-lg space-y-3">
                             <p className="md:text-lg ">Serta ikuti saya di media
                                 sosial.</p>
                             <div className="flex items-center">
-                                <SocialMedia size="large" />
+                                <SocialMedia size="large" links={profileData.social_links} />
                             </div>
                         </div>
                     </div>

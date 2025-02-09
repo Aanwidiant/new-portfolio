@@ -18,10 +18,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ image, title, description }) 
   };
 
   return (
-    <div className="bg-light dark:bg-dark p-4 rounded-xl space-y-2 hover:shadow-md hover:shadow-dark/50 dark:hover:shadow-primary/50 cursor-pointer" onClick={toggleDescription}>
+    <div className="card-style space-y-2 p-4" onClick={toggleDescription}>
       <div className="mx-auto relative h-72">
         <Image
-          src={image}
+          src={image || "/fallback-img.png"}
           alt={title}
           layout="fill"
           objectFit="contain"

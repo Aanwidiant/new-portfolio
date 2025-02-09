@@ -14,7 +14,7 @@ export default function NotFound() {
     <main className="flex pt-28 pb-16 h-fit lg:min-h-screen items-center ">
       <div className="container">
         <div className="flex flex-wrap gap-y-12">
-          <div className="relative flex flex-col gap-y-4 w-full px-4 lg:w-1/2 h-[36rem]">
+          <div className="relative flex flex-col gap-y-4 w-full px-4 lg:w-1/2 h-[32rem]">
             <Image
               src='/img/404.svg'
               alt='not-found-img'

@@ -1,9 +1,0 @@
-{
-    "contentType": [
-        { "id": 1, "type": "header" },
-        { "id": 2, "type": "image" },
-        { "id": 3, "type": "paragraph" },
-        { "id": 4, "type": "code" },
-        { "id": 5, "type": "list" }
-    ]
-}
