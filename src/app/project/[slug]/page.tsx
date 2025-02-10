@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import { notFound, useParams } from "next/navigation";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import "swiper/css";
-import Image from 'next/image';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 import Button from "@/components/button";
 import Lock from '@/components/icons/lock';
 import ExternalLink from '@/components/icons/external-link';
 import Unavailable from '@/components/icons/unavailable';
+import ImageWithFallback from "@/components/image-with-fallback";
 
 interface Project {
   title: string;
@@ -72,31 +74,34 @@ export default function DetailProjectPage() {
 
   return (
     <main>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="col-span-2 md:col-span-1">
+      <div className="grid grid-cols-5 gap-4">
+        <div className="col-span-5 md:col-span-3">
           <Swiper
+            spaceBetween={20}
             slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            modules={[Pagination]}
             loop
-            className="relative rounded-lg overflow-hidden group cursor-pointer hover:shadow-xl hover:-translate-y-2 transition-transform duration-300"
+            className="relative rounded-lg overflow-hidden group cursor-pointer hover:shadow-md hover:-translate-y-1 transition-transform duration-300 hover:shadow-dark/20 dark:hover:shadow-primary/50"
           >
             {projectContent.images.map((image, index) => (
               <SwiperSlide key={index}>
-                <div className="relative w-full h-96">
-                  <Image
+                <div className="relative w-full aspect-[5/3]">
+                  <ImageWithFallback
                     src={image}
                     alt={`Image ${index + 1} of ${projectContent.title}`}
-                    layout="fill"
-                    objectFit="cover"
-                    className="rounded-lg"
+                    fill
+                    className='rounded-lg'
                   />
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
-        <div className="col-span-2 md:col-span-1 gap-2">
+        <div className="col-span-5 md:col-span-2 gap-2">
           <h1 className="text-xl font-bold lg:text-2xl py-2">{projectContent.title}</h1>
           <div className="flex flex-col gap-y-3">
             <p className="text-justify lg:text-lg">{projectContent.description}</p>
@@ -104,7 +109,7 @@ export default function DetailProjectPage() {
             <div className="flex flex-wrap gap-4">
               {projectContent.technologies?.map((tech, index) => (
                 <div key={index} className="flex items-center gap-2">
-                  <Image
+                  <ImageWithFallback
                     src={tech.url}
                     alt={tech.name}
                     width={28}
@@ -140,7 +145,7 @@ export default function DetailProjectPage() {
             </div>
           </div>
         </div>
-        {projectContent.features && (<div className="col-span-2 space-y-2">
+        {projectContent.features && (<div className="col-span-5 space-y-2">
           <h2 className="text-lg md:text-xl font-semibold">Feature</h2>
           <ul className="list-disc pl-5 space-y-2 lg:text-lg">
             {projectContent.features.map((feature, index) => (
@@ -148,7 +153,7 @@ export default function DetailProjectPage() {
             ))}
           </ul>
         </div>)}
-        {projectContent.contribution && (<div className="col-span-2 space-y-2">
+        {projectContent.contribution && (<div className="col-span-5 space-y-2">
           <h2 className="text-lg md:text-xl font-medium">Kontribusi</h2>
           <ul className="list-disc pl-5 space-y-2 lg:text-lg">
             {projectContent.contribution.map((contribution, index) => (
@@ -157,6 +162,6 @@ export default function DetailProjectPage() {
           </ul>
         </div>)}
       </div>
-    </main>
+    </main >
   );
 }

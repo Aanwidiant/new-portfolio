@@ -1,11 +1,11 @@
 'use client'
 import { useEffect, useState } from 'react';
 import { notFound, useParams } from "next/navigation";
-import Image from "next/image";
 import ShareButtons from "@/components/share-button";
 import CodeBlock from "@/components/code-block";
 import Calender from "@/components/icons/calender";
 import Pen from "@/components/icons/pen";
+import ImageWithFallback from "@/components/image-with-fallback";
 
 interface ArticleData {
   title: string;
@@ -112,13 +112,13 @@ export default function ArticlePage() {
 
   return (
     <main className="pt-28">
-      <div className="flex flex-wrap space-y-4">
-        <div className="h-96 w-full relative rounded-lg overflow-hidden hover:shadow-xl group hover:-translate-y-2 transition-transform duration-300">
-          <Image
-            src={articleContent.image || "/fallback-img.png"}
+      <div className="flex flex-wrap justify-center space-y-4">
+        <div className="relative aspect-[5/3] w-full md:w-4/5 rounded-lg overflow-hidden group cursor-pointer hover:shadow-md hover:-translate-y-1 transition-transform duration-300 hover:shadow-dark/20 dark:hover:shadow-primary/50">
+          <ImageWithFallback
+            src={articleContent.image}
             alt={`gambar ${articleContent.title}`}
             fill
-            className="rounded-lg group-hover:scale-105 object-cover"
+            className='rounded-lg object-contain group-hover:scale-105'
           />
         </div>
 

@@ -10,7 +10,7 @@ interface ApiResponse {
 interface Project {
   _id: string;
   title: string;
-  image: string;
+  first_image: string;
 }
 
 type Props = {
@@ -62,7 +62,7 @@ export default function DetailProjectLayout({ children }: Props) {
               title={project.title}
               buttonText="Lihat Detail"
               link={`/project/${createSlug(project.title)}`}
-              imageSrc={project.image || "/fallback-img.png"}
+              imageSrc={project.first_image || "/fallback-img.png"}
             />
           ))}
         </div>
