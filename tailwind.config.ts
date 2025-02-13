@@ -24,6 +24,8 @@ export default {
                 'light-etd': '#F5F7F8',
                 dark: '#0f172a',
                 'dark-etd': '#334155',
+                'light-skeleton': '#9CA3AF',
+                'dark-skeleton': '#64748B',
                 primary: '#14B8A6',
                 muted: '#9ca3af',
                 info: '#0284c7',

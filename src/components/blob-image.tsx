@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface BlobImageProps {
     heroImage: string;
@@ -24,12 +25,14 @@ const BlobImage: React.FC<BlobImageProps> = ({ heroImage }) => {
                     d="M10 176.321C-3.33333 168.623 -3.33334 149.378 10 141.679L250 3.11545C263.333 -4.58258 280 5.03992 280 20.4359V297.564C280 312.96 263.333 322.583 250 314.885L10 176.321Z"
                     clipPath="url(#blobClip)"
                 />
-                <image
-                    className="h-full"
-                    id="imageBlob"
-                    href={heroImage}
-                    clipPath="url(#heroClip)"
-                ></image>
+                <foreignObject width="280" height="318" clipPath="url(#heroClip)">
+                    <Image
+                        src={heroImage}
+                        alt="Hero Image"
+                        fill
+                        className="object-contain"
+                    />
+                </foreignObject>
             </svg>
         </div>
     );

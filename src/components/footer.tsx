@@ -5,6 +5,7 @@ import Link from 'next/link';
 import SocialMedia from '@/components/social-media';
 import Mail from '@/components/icons/mail';
 import Location from '@/components/icons/location';
+import Skeleton from '@/components/skeleton';
 
 interface Profile {
     name: string;
@@ -41,10 +42,6 @@ export default function Footer() {
         fetchProfileData();
     }, []);
 
-    if (!profileData) {
-        return <div>Loading...</div>;
-    }
-
     return (
         <footer className="pt-10 bg-light dark:bg-dark">
             <div className="container flex flex-wrap">
@@ -58,18 +55,40 @@ export default function Footer() {
                         <h3 className="text-xl font-semibold">Hubungi Saya</h3>
                         <div className="flex gap-x-3">
                             <Mail className="fill-dark dark:fill-light w-6 h-6" />
-                            <p>{profileData.email}</p>
+                            {profileData?.email ? (
+                                <p>{profileData.email}</p>
+                            ) : (
+                                <Skeleton className="w-1/2 h-3.5 lg:h-4" />
+                            )}
+
                         </div>
                         <div className="flex gap-x-3">
                             <Location className="fill-dark dark:fill-light flex-shrink-0 w-6 h-6" />
-                            <p className="w-3/4">{profileData.address}
-                            </p>
+                            {profileData?.address ? (
+                                <p className="w-3/4">{profileData.address}</p>
+                            ) : (
+                                <div className='space-y-3 w-3/4'>
+                                    <Skeleton className="w-full h-3.5 lg:h-4" />
+                                    <Skeleton className="w-full h-3.5 lg:h-4" />
+                                </div>
+                            )}
+
                         </div>
                     </div>
                 </div>
                 <div className="w-full px-4 mb-10 md:w-1/3">
                     <h3 className="mb-5 text-xl font-semibold">Ikuti Saya</h3>
-                    <SocialMedia links={profileData.social_links} />
+                    {profileData?.social_links ? (
+                        <SocialMedia links={profileData.social_links} />
+                    ) : (
+                        <div className='flex gap-x-3'>
+                            <Skeleton className="w-9 h-9" />
+                            <Skeleton className="w-9 h-9" />
+                            <Skeleton className="w-9 h-9" />
+                            <Skeleton className="w-9 h-9" />
+                            <Skeleton className="w-9 h-9" />
+                        </div>
+                    )}
                 </div>
                 <div className="w-full px-4 mb-10 md:w-1/3">
                     <h3 className="flex flex-col mb-5 text-xl font-semibold">Tautan Menu</h3>
